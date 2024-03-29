@@ -60,7 +60,7 @@ const statistics: Statistic[] = [
   },
 ];
 
-const apiEndpoint = "http://localhost:4000";
+const apiEndpoint = "https://rvis.clps.brown.edu/backend";
 
 const Users = () => {
   const userModalDisclosure = useDisclosure();
