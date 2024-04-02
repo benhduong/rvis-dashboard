@@ -60,7 +60,7 @@ const statistics: Statistic[] = [
   },
 ];
 
-const apiEndpoint: string = process.env.REACT_APP_IP as string;
+const apiEndpoint = "https://rvis.clps.brown.edu/backend";
 
 const Users = () => {
   const userModalDisclosure = useDisclosure();
