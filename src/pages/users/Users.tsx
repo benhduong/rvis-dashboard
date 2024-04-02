@@ -60,8 +60,6 @@ const statistics: Statistic[] = [
   },
 ];
 
-const apiEndpoint = "https://rvis.clps.brown.edu/backend";
-
 const Users = () => {
   const userModalDisclosure = useDisclosure();
   const flagModalDisclosure = useDisclosure();
@@ -71,7 +69,7 @@ const Users = () => {
 
   useEffect(() => {
     setJustModified(false);
-    fetch(apiEndpoint + "/admin/allUsers")
+    fetch("/admin/allUsers")
       .then((res) => res.json())
       .then((res: AllUsersResponse) => {
         setUsers(res.users);
@@ -80,7 +78,7 @@ const Users = () => {
   }, [setUsers, justModified]);
 
   const deleteUser = (username: string) => {
-    fetch(apiEndpoint + "/admin/deleteUser", {
+    fetch("/admin/deleteUser", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: username }),
@@ -95,7 +93,7 @@ const Users = () => {
   };
 
   const setFlag = (username: string, reason: string) => {
-    fetch(apiEndpoint + "/admin/setFlag", {
+    fetch("/admin/setFlag", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: username, reason: reason }),
@@ -110,7 +108,7 @@ const Users = () => {
   };
 
   const deleteFlag = (username: string) => {
-    fetch(apiEndpoint + "/admin/deleteFlag", {
+    fetch("/admin/deleteFlag", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: username }),
