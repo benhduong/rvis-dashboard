@@ -60,7 +60,7 @@ const statistics: Statistic[] = [
   },
 ];
 
-const apiEndpoint = "https://rvis.clps.brown.edu/backend";
+const apiEndpoint: string = process.env.REACT_APP_IP as string;
 
 const Users = () => {
   const userModalDisclosure = useDisclosure();
@@ -71,7 +71,7 @@ const Users = () => {
 
   useEffect(() => {
     setJustModified(false);
-    fetch(apiEndpoint + "/allUsers")
+    fetch(apiEndpoint + "/admin/allUsers")
       .then((res) => res.json())
       .then((res: AllUsersResponse) => {
         setUsers(res.users);
@@ -80,7 +80,7 @@ const Users = () => {
   }, [setUsers, justModified]);
 
   const deleteUser = (username: string) => {
-    fetch(apiEndpoint + "/deleteUser", {
+    fetch(apiEndpoint + "/admin/deleteUser", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: username }),
@@ -95,7 +95,7 @@ const Users = () => {
   };
 
   const setFlag = (username: string, reason: string) => {
-    fetch(apiEndpoint + "/setFlag", {
+    fetch(apiEndpoint + "/admin/setFlag", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: username, reason: reason }),
@@ -110,7 +110,7 @@ const Users = () => {
   };
 
   const deleteFlag = (username: string) => {
-    fetch(apiEndpoint + "/deleteFlag", {
+    fetch(apiEndpoint + "/admin/deleteFlag", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: username }),
