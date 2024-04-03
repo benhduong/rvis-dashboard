@@ -71,7 +71,7 @@ const Users = () => {
 
   useEffect(() => {
     setJustModified(false);
-    fetch(API_ENDPOINT + "/admin/allUsers")
+    fetch(API_ENDPOINT + "/allUsers")
       .then((res) => res.json())
       .then((res: AllUsersResponse) => {
         setUsers(res.users);
@@ -80,7 +80,7 @@ const Users = () => {
   }, [setUsers, justModified]);
 
   const deleteUser = (username: string) => {
-    fetch(API_ENDPOINT + "/admin/deleteUser", {
+    fetch(API_ENDPOINT + "/deleteUser", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: username }),
@@ -95,7 +95,7 @@ const Users = () => {
   };
 
   const setFlag = (username: string, reason: string) => {
-    fetch(API_ENDPOINT + "/admin/setFlag", {
+    fetch(API_ENDPOINT + "/setFlag", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: username, reason: reason }),
@@ -110,7 +110,7 @@ const Users = () => {
   };
 
   const deleteFlag = (username: string) => {
-    fetch(API_ENDPOINT + "/admin/deleteFlag", {
+    fetch(API_ENDPOINT + "/deleteFlag", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: username }),
