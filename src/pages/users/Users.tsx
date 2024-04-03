@@ -50,10 +50,9 @@ const statistics: Statistic[] = [
     caption: "Average Score",
     evaluate: (users: User[]) =>
       Math.round(
-        (users.map((user: User) => user.points).reduce((a, b) => a + b, 0) /
-          users.length) *
-          100
-      ) / 100,
+        users.map((user: User) => user.points).reduce((a, b) => a + b, 0) /
+          users.length
+      ),
   },
   {
     caption: "Highest Score",
@@ -222,9 +221,9 @@ const Users = () => {
                           2
                         )}
                   </Td>
-                  <Td>{user.avg_response_time_correct.toFixed(2)}</Td>
-                  <Td>{user.avg_response_time_incorrect.toFixed(2)}</Td>
-                  <Td>{user.ct_accuracy.toFixed(2)}</Td>
+                  <Td>{(user.avg_response_time_correct * 1.0).toFixed(2)}</Td>
+                  <Td>{(user.avg_response_time_incorrect * 1.0).toFixed(2)}</Td>
+                  <Td>{(user.ct_accuracy * 1.0).toFixed(2)}</Td>
                 </Tr>
               ))}
           </Tbody>
