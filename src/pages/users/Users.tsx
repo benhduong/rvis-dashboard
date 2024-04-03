@@ -225,7 +225,7 @@ const Users = () => {
                   </Td>
                   <Td>{Math.round(user.avg_response_time_correct)}</Td>
                   <Td>{Math.round(user.avg_response_time_incorrect)}</Td>
-                  <Td>{Math.round(user.ct_accuracy)}</Td>
+                  <Td>{user.ct_accuracy}</Td>
                 </Tr>
               ))}
           </Tbody>
