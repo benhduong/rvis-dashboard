@@ -176,10 +176,10 @@ const Users = () => {
               <Th fontSize="lg">Points</Th>
               <Th fontSize="lg">Name</Th>
               <Th fontSize="lg">Flag</Th>
-              <Th fontSize="lg"># Images Seen</Th>
+              <Th fontSize="lg"># Images</Th>
               <Th fontSize="lg">Accuracy</Th>
-              <Th fontSize="lg">Avg Reaction Time, Correct</Th>
-              <Th fontSize="lg">Avg Reaction Time, Incorrect</Th>
+              <Th fontSize="lg">Corr Resp Time</Th>
+              <Th fontSize="lg">Incorr Resp Time</Th>
               <Th fontSize="lg">CT Accuracy</Th>
             </Tr>
           </Thead>
@@ -223,9 +223,9 @@ const Users = () => {
                           2
                         )}
                   </Td>
-                  <Td>{user.avg_response_time_correct}</Td>
-                  <Td>{user.avg_response_time_incorrect}</Td>
-                  <Td>{user.ct_accuracy}</Td>
+                  <Td>{Math.fround(user.avg_response_time_correct)}</Td>
+                  <Td>{Math.fround(user.avg_response_time_incorrect)}</Td>
+                  <Td>{Math.fround(user.ct_accuracy)}</Td>
                 </Tr>
               ))}
           </Tbody>
