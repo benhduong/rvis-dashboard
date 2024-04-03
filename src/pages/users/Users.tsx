@@ -58,8 +58,7 @@ const statistics: Statistic[] = [
   {
     caption: "Highest Score",
     evaluate: (users: User[]) =>
-      Math.round(Math.max(...users.map((user: User) => user.points)) * 100) /
-      100,
+      Math.max(...users.map((user: User) => user.points)),
   },
 ];
 
@@ -223,9 +222,9 @@ const Users = () => {
                           2
                         )}
                   </Td>
-                  <Td>{Math.round(user.avg_response_time_correct)}</Td>
-                  <Td>{Math.round(user.avg_response_time_incorrect)}</Td>
-                  <Td>{user.ct_accuracy}</Td>
+                  <Td>{user.avg_response_time_correct.toFixed(2)}</Td>
+                  <Td>{user.avg_response_time_incorrect.toFixed(2)}</Td>
+                  <Td>{user.ct_accuracy.toFixed(2)}</Td>
                 </Tr>
               ))}
           </Tbody>
