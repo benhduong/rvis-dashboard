@@ -223,9 +223,9 @@ const Users = () => {
                           2
                         )}
                   </Td>
-                  <Td>{Math.fround(user.avg_response_time_correct)}</Td>
-                  <Td>{Math.fround(user.avg_response_time_incorrect)}</Td>
-                  <Td>{Math.fround(user.ct_accuracy)}</Td>
+                  <Td>{Math.round(user.avg_response_time_correct)}</Td>
+                  <Td>{Math.round(user.avg_response_time_incorrect)}</Td>
+                  <Td>{Math.round(user.ct_accuracy)}</Td>
                 </Tr>
               ))}
           </Tbody>
