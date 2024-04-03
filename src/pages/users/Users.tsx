@@ -173,14 +173,14 @@ const Users = () => {
         <Table size={{ base: "sm", md: "md" }}>
           <Thead>
             <Tr>
-              <Th fontSize="lg">Points</Th>
+              <Th fontSize="lg">Score</Th>
               <Th fontSize="lg">Name</Th>
               <Th fontSize="lg">Flag</Th>
               <Th fontSize="lg"># Images</Th>
-              <Th fontSize="lg">Accuracy</Th>
+              <Th fontSize="lg">Acc</Th>
               <Th fontSize="lg">Corr Resp Time</Th>
               <Th fontSize="lg">Incorr Resp Time</Th>
-              <Th fontSize="lg">CT Accuracy</Th>
+              <Th fontSize="lg">CT Acc</Th>
             </Tr>
           </Thead>
           <Tbody>
