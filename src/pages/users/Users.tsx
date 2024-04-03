@@ -27,6 +27,9 @@ export interface User {
   flag?: string;
   num_corr_trials: number;
   num_total_trials: number;
+  avg_response_time_correct: number;
+  avg_response_time_incorrect: number;
+  ct_accuracy: number;
 }
 
 export interface AllUsersResponse {
@@ -220,6 +223,9 @@ const Users = () => {
                           2
                         )}
                   </Td>
+                  <Td>{user.avg_response_time_correct}</Td>
+                  <Td>{user.avg_response_time_incorrect}</Td>
+                  <Td>{user.ct_accuracy}</Td>
                 </Tr>
               ))}
           </Tbody>
